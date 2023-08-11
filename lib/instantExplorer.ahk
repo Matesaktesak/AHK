@@ -34,7 +34,7 @@ instantExplorer(f_path){
                 return
             }
             
-			if(f_title = "Save As" || f_title = "Save Project"){ ;IDK if this OR is properly nested....
+			if(f_title ~= "(Save As|Save Project)"){ ;IDK if this OR is properly nested....
 				ControlFocus("Edit1", f_window_id) ;this is really important.... it doesn't work if you don't do this...
 				; Activate the window so that if the user is middle-clicking
 				; outside the dialog , subsequent clicks will also work:
@@ -52,7 +52,7 @@ instantExplorer(f_path){
             }
         }
 
-        if(InStr("#32770 ExploreWClass CabinetWClass", f_class)){
+        if(f_class ~= "(#32770|ExploreWClass|CabinetWClass)"){
             try{
                 ControlGetHwnd("Edit1", f_window_id)
                 f_hasEdit1 := true
