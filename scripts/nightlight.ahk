@@ -1,7 +1,7 @@
 ﻿toggleNightLight(){
 	Send("#a") ; open Windows Action Center
 
-	Sleep(630) ; wait for the animation...
+	Sleep(650) ; wait for the animation...
 
 	; Send +{Tab} ; go to the last box (the one with all the toggles)
 	Send("{Home}") ; go to the first button in said box
