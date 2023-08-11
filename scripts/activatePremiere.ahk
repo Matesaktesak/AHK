@@ -9,4 +9,4 @@ switchToPremiere(){
 }
 
 switchToPremiere()
-    
+ExitApp

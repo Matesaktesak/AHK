@@ -12,3 +12,4 @@ switchToDiscord(){
 }
 
 switchToDiscord()
+ExitApp

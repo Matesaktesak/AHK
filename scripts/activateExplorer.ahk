@@ -6,7 +6,7 @@ switchToExplorer(){
     }
     
     GroupAdd("plorers", "ahk_class CabinetWClass")
-    GroupAdd("plorers", "ahk_class ExploreWClass")
+    ;GroupAdd("plorers", "ahk_class ExploreWClass")
     
     if(WinActive("ahk_exe explorer.exe")){
         GroupActivate("plorers", "R")
@@ -14,4 +14,4 @@ switchToExplorer(){
 }
 
 switchToExplorer()
-    
+ExitApp

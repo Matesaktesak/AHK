@@ -9,4 +9,4 @@ switchToOutlook(){
 }
 
 switchToOutlook()
-    
+ExitApp

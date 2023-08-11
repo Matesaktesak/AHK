@@ -9,4 +9,4 @@ switchToSpotify(){
 }
 
 switchToSpotify()
-    
+ExitApp

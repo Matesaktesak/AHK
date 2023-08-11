@@ -12,3 +12,4 @@ switchToChrome(){
 }
 
 switchToChrome()
+ExitApp
