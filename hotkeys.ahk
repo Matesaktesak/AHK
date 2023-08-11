@@ -1,12 +1,12 @@
 ﻿#Requires AutoHotkey v2.0
 TraySetIcon("shell32.dll", 283) ;tray icon is now a little keyboard, or piece of paper or something
 
-#include lib/pushToTalk.ahk
-#include lib/search.ahk
-#include lib/back.ahk
-#include lib/instantExplorer.ahk
-#include lib/saveExplorerLocation.ahk
-#include lib/recallExplorerLocation.ahk
+#include lib/general/pushToTalk.ahk
+#include lib/general/search.ahk
+#include lib/general/back.ahk
+#include lib/general/instantExplorer.ahk
+#include lib/general/saveExplorerLocation.ahk
+#include lib/general/recallExplorerLocation.ahk
 
 SetKeyDelay 0 ;warning ---this was absent for some reason. i just added it back in. IDK if I removed it for a reason or not...
 

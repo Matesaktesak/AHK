@@ -7,10 +7,12 @@ SurfaceDial
 backup profile.cueprofile
 G1-55*
 InsideClipboard*
-keypress-osd.exe
 Launch_Control_XL_Mapping_Data.syx
 Lightpack.ini
 midi.ico
 msvcr100.dll
 Samolepky.psd
 Samolepky2.psd
+iCUESDK*
+keypress-osd*
+updater.bat
