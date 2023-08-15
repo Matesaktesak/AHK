@@ -1,19 +1,12 @@
 #SingleInstance
 
+#include ../premiere/pr_presets.ahk
+
 search(){
     if(Winactive("ahk_exe Adobe Premiere Pro.exe")) {
         try {
-            activeSubwindow := ControlGetClassNN(ControlGetFocus("ahk_exe Adobe Premiere Pro.exe"))
-            
-            if(activeSubwindow = "DroverLord - Window Class12" || activeSubwindow = "DroverLord - Window Class41"){
-                Send("^!f{Backspace}")
-            }
+            pr_effectsType() ;
         }
-        ; if A_IsFunc("effectsPanelType") {
-        ;     Func := Func("effectsPanelType")
-        ;     RetVal := Func.Call(directory ,"") 
-        ; }     
-        ;This just CLEARS the effects panel search bar so that you can type something in.
     } else if(WinActive("ahk_exe notepad++.exe")){
         Send("^f")
     } else if(WinActive("ahk_exe brave.exe")){
