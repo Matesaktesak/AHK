@@ -3,6 +3,9 @@
 switchToExplorer(){
     if(!WinExist("ahk_class CabinetWClass")) {
         Run("explorer.exe")
+        while(!WinExist("ahk_class CabinetWClass")){ ; Wait for the window to open
+            Sleep(10) ; Otherwise we later try to activate a non-existant window
+        }
     }
     
     GroupAdd("plorers", "ahk_class CabinetWClass")
