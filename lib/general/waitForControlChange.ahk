@@ -13,9 +13,9 @@ waitControl(hwnd, upto, callback){
 
         if(upto <= 0){
             Tooltip("") ;
-            return ; only wait upto 500ms 
+            return ; only wait upto the set ammount of time, than default.. 
         }
     }
 
-    Tooltip("") ;
+    Tooltip("") ; 
 }

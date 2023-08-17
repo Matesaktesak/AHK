@@ -7,7 +7,6 @@
 pr_selectPreset(name){
     BlockInput(true) ; Prevent the user from moving the mouse
 
-    
     CoordMode("Mouse", "Screen") ; Set coordmode to be relative to the screen
     MouseGetPos(&startX, &startY) ; Note the starting position of the mouse
     
@@ -25,13 +24,13 @@ pr_selectPreset(name){
 
     pr_effectsType(name) ;  Select the search box and clear it
 
-    premiereHWND := WinGetID("ahk_exe Adobe Premiere Pro.exe") ; 
+    premiereHWND := WinGetID("A") ; Can't use "ahk_exe Adobe Pre....exe" when the effects pannel may be outside the main Pr window...
     ControlGetPos(&panelX, &panelY, , , ControlGetFocus(premiereHWND)) ; Get the position of the effects box relative to the client area
     MouseMove(panelX + 40, panelY + 73, 0) ; Move mouse at full speed to absolute coords onto the selected preset
 
     CoordMode("Mouse", "Screen") ; Reset coordmode
-    MouseGetPos(&foo, &bar) ;
-    MouseClickDrag("Left", foo, bar, startX, startY, 0) ; Drag the preset at full speed to the original mouse position
+    MouseGetPos(&cx, &cy) ;
+    MouseClickDrag("Left", cx, cy, startX, startY, 0) ; Drag the preset at full speed to the original mouse position
 
     MouseClick("Middle") ; 
 
@@ -41,13 +40,10 @@ pr_selectPreset(name){
 pr_effectsType(text := ""){
     pr_focusPanel("effects") ;  Select the effects panel
 
-    pHWND := WinGetID("ahk_exe Adobe Premiere Pro.exe") ;
-    ;MsgBox(pHWND)
-    waitControl(pHWND, 200, () => Send("^!f")) ;   Select the find box
+    pHWND := WinGetID("A") ; Note the ID of premiere
+
+    waitControl(pHWND, 300, () => Send("^!f")) ;   Select the find box and wait for it to focus
     
-    ;MsgBox(pHWND)
     focusedID := ControlGetFocus(pHWND) ; We unfortunatelly cannot get the searchbox by ID nor name, because it changes a lot
     ControlSetText(text, focusedID, pHWND) ;
-
-    Sleep(20) ;
 }

@@ -7,6 +7,7 @@ TraySetIcon("shell32.dll", 283) ;tray icon is now a little keyboard, or piece of
 #include lib/general/instantExplorer.ahk
 #include lib/general/saveExplorerLocation.ahk
 #include lib/general/recallExplorerLocation.ahk
+#include lib/premiere/pr_presets.ahk
 
 SetKeyDelay 0 ;warning ---this was absent for some reason. i just added it back in. IDK if I removed it for a reason or not...
 
@@ -54,7 +55,14 @@ F18:: saveExplorerLocation(1) ;
 F19:: saveExplorerLocation(2) ;
 +F19:: recallExplorerLocation(2) ;
 
-;NumpadSub:: {
-;	;MsgBox(ControlGetEnabled("DroverLord - Window Class12"))
-;	MsgBox(ControlGetClassNN(ControlGetFocus("ahk_exe Adobe Premiere Pro.exe")))
-;}
+; ++++++++++++++++++++++++++++++++++++++++++
+; +++++++++ Shortcuts for Premiere +++++++++
+; ++++++++++++++++++++++++++++++++++++++++++
+#HotIf GetKeyState("F21", "P") && WinActive("ahk_exe Adobe Premiere Pro.exe")
+
+; --------- Presets ------------
+; Semicolon by scancode...
+SC029:: pr_selectPreset("Warp Stabilizer 20%") ; Warp Stabilizer with 20% smoothness
+; plus by scancode...
+SC002:: pr_selectPreset("Warp Stabilizer 50%") ; Warp Stabilizer with 50% smoothness
+ě:: pr_selectPreset("BRAW to Extended Video") ; bRAW colorspace transform

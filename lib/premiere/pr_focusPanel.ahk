@@ -14,7 +14,7 @@ pr_focusPanel(panel){
 
 switchPanel(panel){
     switch(panel){
-        case "project": Send "^+!{F1}" ;
+        case "project": Send "^+!{F1}" ; These shortcuts need to be ALL set inside Premiere under Windows
         case "sourceMonitor": Send "^+!{F2}" ;
         case "timeline": Send "^+!{F3}" ; 
         case "programMonitor": Send "^+!{F4}" ;
