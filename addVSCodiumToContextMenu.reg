@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+; Open files
+[HKEY_CLASSES_ROOT\*\shell\Open with VSCodium]
+@="Edit with VSCodium"
+"Icon"="C:\\Users\\matya\\AppData\\Local\\Programs\\VSCodium\\VSCodium.exe,0"
+[HKEY_CLASSES_ROOT\*\shell\Open with VSCodium\command]
+@="\"C:\\Users\\matya\\AppData\\Local\\Programs\\VSCodium\\VSCodium.exe\" \"%1\""
+; This will make it appear when you right click ON a folder
+; The "Icon" line can be removed if you don't want the icon to appear
+[HKEY_CLASSES_ROOT\Directory\shell\vscodium]
+@="Open Folder as VSCodium Project"
+"Icon"="\"C:\\Users\\matya\\AppData\\Local\\Programs\\VSCodium\\VSCodium.exe\",0"
+[HKEY_CLASSES_ROOT\Directory\shell\vscodium\command]
+@="\"C:\\Users\\matya\\AppData\\Local\\Programs\\VSCodium\\VSCodium.exe\" \"%1\""
+; This will make it appear when you right click INSIDE a folder
+; The "Icon" line can be removed if you don't want the icon to appear
+[HKEY_CLASSES_ROOT\Directory\Background\shell\vscodium]
+@="Open Folder as VSCodium Project"
+"Icon"="\"C:\\Users\\matya\\AppData\\Local\\Programs\\VSCodium\\VSCodium.exe\",0"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\vscodium\command]
+@="\"C:\\Users\\matya\\AppData\\Local\\Programs\\VSCodium\\VSCodium.exe\" \"%V\""
