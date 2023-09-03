@@ -9,6 +9,7 @@ TraySetIcon("shell32.dll", 283) ;tray icon is now a little keyboard, or piece of
 #include lib/general/recallExplorerLocation.ahk
 #include lib/premiere/pr_presets.ahk
 #include lib/premiere/pr_setClipSpeed.ahk
+#include lib/premiere/pr_changeClipGain.ahk
 
 SetKeyDelay 0 ;warning ---this was absent for some reason. i just added it back in. IDK if I removed it for a reason or not...
 
@@ -76,3 +77,9 @@ SC002:: pr_selectPreset("Warp Stabilizer 50%") ; Warp Stabilizer with 50% smooth
 é:: pr_setClipSpeed(200) ;
 =:: pr_setClipSpeed(300) ;
 SC00D:: pr_setClipSpeed(500) ;
+
+; --------- Clip gains ---------------------
+F5:: pr_changeClipGain(-8) ; Adjusts clip gain by -8db
+F6:: pr_changeClipGain(-4) ; 
+F7:: pr_changeClipGain(+4) ; 
+F8:: pr_changeClipGain(+8) ; 
