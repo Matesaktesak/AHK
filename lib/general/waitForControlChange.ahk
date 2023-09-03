@@ -19,3 +19,23 @@ waitControl(hwnd, upto, callback){
 
     Tooltip("") ; 
 }
+
+waitWindow(upto, callback){
+    previousPanel := WinGetID("A") ; note the first window
+    
+    callback() ; call the lambda
+
+    while(WinGetID("A") == previousPanel){   ; While the panel hasn't switched, keep waiting
+        Tooltip("Waiting " . upto) ;
+
+        Sleep(10) ;
+        upto -= 10 ;
+
+        if(upto <= 0){
+            Tooltip("") ;
+            return ; only wait upto the set ammount of time, than default.. 
+        }
+    }
+
+    Tooltip("") ; 
+}

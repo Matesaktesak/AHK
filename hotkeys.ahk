@@ -8,6 +8,7 @@ TraySetIcon("shell32.dll", 283) ;tray icon is now a little keyboard, or piece of
 #include lib/general/saveExplorerLocation.ahk
 #include lib/general/recallExplorerLocation.ahk
 #include lib/premiere/pr_presets.ahk
+#include lib/premiere/pr_setClipSpeed.ahk
 
 SetKeyDelay 0 ;warning ---this was absent for some reason. i just added it back in. IDK if I removed it for a reason or not...
 
@@ -27,7 +28,8 @@ A_MenuMaskKey := "vkFF"  ; vkFF is unassigned.
 ; Let me type the Scharfes S (ß) on my stupid keyboard layout!
 <^>!§:: Send("ß")
 
-::xd:: 😂
+::xd::😂
+::njn::no jo, no...
 
 ; ----------------- All Windows ----------------------
 ^+!F11:: search()
@@ -66,3 +68,11 @@ SC029:: pr_selectPreset("Warp Stabilizer 20%") ; Warp Stabilizer with 20% smooth
 ; plus by scancode...
 SC002:: pr_selectPreset("Warp Stabilizer 50%") ; Warp Stabilizer with 50% smoothness
 ě:: pr_selectPreset("BRAW to Extended Video") ; bRAW colorspace transform
+
+; --------- Clip speeds --------------------
+ý:: pr_setClipSpeed(50) ; Set clip speed to 50%
+á:: pr_setClipSpeed(80) ;
+í:: pr_setClipSpeed(100) ;
+é:: pr_setClipSpeed(200) ;
+=:: pr_setClipSpeed(300) ;
+SC00D:: pr_setClipSpeed(500) ;
