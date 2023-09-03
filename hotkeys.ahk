@@ -79,7 +79,7 @@ SC002:: pr_selectPreset("Warp Stabilizer 50%") ; Warp Stabilizer with 50% smooth
 SC00D:: pr_setClipSpeed(500) ;
 
 ; --------- Clip gains ---------------------
-F5:: pr_changeClipGain(-8) ; Adjusts clip gain by -8db
-F6:: pr_changeClipGain(-4) ; 
-F7:: pr_changeClipGain(+4) ; 
-F8:: pr_changeClipGain(+8) ; 
+F5:: pr_changeClipGain("adjust", -8) ; Adjusts clip gain by -8db
+F6:: pr_changeClipGain("adjust", -4) ; 
+F7:: pr_changeClipGain("adjust", +4) ; 
+F8:: pr_changeClipGain("adjust", +8) ; 
