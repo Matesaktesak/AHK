@@ -15,18 +15,15 @@ pr_changeClipGain(action, gain){
     Send("{Shift down}{TAB}{Shift up}{Up 3}") ; Tab to the radio buttons, get to the top and reselect the field
     switch(action){
         case "set":
-            break ;
+            ; 
         case "normalize_max":
             Send("{Down 2}") ;
-            break ;
         case "normalize_all":
             Send("{Down 3}") ;
-            break ;
         case "adjust":
-        default:
-            Send("{Down 1}") ;
-            break ;
-            
+            Send("{Down 1}") ;          
+        case "default":
+            Send("{Down 1}") ;          
     }
     Send("{TAB}") ; 
 
