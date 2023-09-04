@@ -13,7 +13,7 @@ waitControl(hwnd, upto, callback){
 
         if(upto <= 0){
             Tooltip("") ;
-            return ; only wait upto the set ammount of time, than default.. 
+            throw(TimeoutError("The suspected control didn't change!")) ; only wait upto the set ammount of time, than default.. 
         }
     }
 
@@ -22,7 +22,7 @@ waitControl(hwnd, upto, callback){
 
 waitWindow(upto, callback){
     previousPanel := WinGetID("A") ; note the first window
-    
+
     callback() ; call the lambda
 
     while(WinGetID("A") == previousPanel){   ; While the panel hasn't switched, keep waiting
@@ -33,7 +33,7 @@ waitWindow(upto, callback){
 
         if(upto <= 0){
             Tooltip("") ;
-            return ; only wait upto the set ammount of time, than default.. 
+            throw(TimeoutError("The suspected window didn't change!")) ; only wait upto the set ammount of time, than default.. 
         }
     }
 

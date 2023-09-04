@@ -9,7 +9,13 @@ pr_setClipSpeed(speed){
         throw(TargetError("Premiere has to be active")) ; 
     }
 
-    waitWindow(1000, () => Send("^!+d")) ; This has to be mapped to Clip Speed dialog in PrPro
+    try{
+        waitWindow(1000, () => Send("^!+d")) ; This has to be mapped to Clip Speed dialog in PrPro
+    } catch TimeoutError as e {
+        MsgBox(e.Message) ; 
+        return ;
+    }
+
     Send("{Ctrl up}{Alt up}{Shift up}{d up}") ; IDK whyyyyyyy????!!!! The modifiers get stuck... So just release them
     sleep(50) ;
 

@@ -11,7 +11,12 @@ pr_changeClipGain(action, gain){
            gain := 0 ;
     }
 
-    waitWindow(1000, () => Send("a")) ; This has to be mapped to Audio Gain dialog in PrPro
+    try{
+        waitWindow(1000, () => Send("a")) ; This has to be mapped to Audio Gain dialog in PrPro
+    } catch TimeoutError as e {
+        MsgBox(e.Message) ;
+        return ;
+    }
     sleep(50) ;
 
     Send("{Shift down}{TAB}{Shift up}{Up 3}") ; Tab to the radio buttons, get to the top and reselect the field
