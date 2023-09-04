@@ -41,8 +41,10 @@ pr_effectsType(text := ""){
     pr_focusPanel("effects") ;  Select the effects panel
 
     pHWND := WinGetID("A") ; Note the ID of premiere
-
-    waitControl(pHWND, 300, () => Send("^!f")) ;   Select the find box and wait for it to focus
+    
+    try{
+        waitControl(pHWND, 300, () => Send("^!f")) ;   Select the find box and wait for it to focus
+    }
     
     focusedID := ControlGetFocus(pHWND) ; We unfortunatelly cannot get the searchbox by ID nor name, because it changes a lot
     ControlSetText(text, focusedID, pHWND) ;

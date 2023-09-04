@@ -9,7 +9,9 @@ pr_focusPanel(panel){
 
     premiereHWND := WinGetID("ahk_exe Adobe Premiere Pro.exe") ; 
 
-    waitControl(premiereHWND, 200, () => switchPanel(panel)) ; Had to refactor the labda outside...
+    try{
+        waitControl(premiereHWND, 200, () => switchPanel(panel)) ; Had to refactor the labda outside...
+    }
 }
 
 switchPanel(panel){
